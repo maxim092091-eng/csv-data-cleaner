@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "csv-data-cleaner"
+version = "1.0.0"
+description = "A Python project for cleaning and standardizing an employee dataset using pandas."
+requires-python = ">=3.10"
+dependencies = [
+    "pandas",
+]
+
+
+[project.scripts]
+csv-cleaner = "csv_data_cleaner.main:main"
+
+
+[dependency-groups]
+dev = [
+    "pytest",
+]
+
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+[tool.setuptools.package-data]
+csv_data_cleaner = ["data/*"]
